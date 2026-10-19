@@ -173,6 +173,12 @@
 #reg-wrap .reg-list > li > .reg-gradi {margin: 0 0 10px}
 .reg-table-stretta {max-width: 560px}
 
+/* Fazioni */
+.reg-stat-principali {display: block; margin-top: 3px; font-size: 13px; color: var(--reg-text-muted)}
+.reg-stat-principali strong {font-weight: 600; color: var(--reg-accent-dark)}
+#reg-wrap .reg-card-row.reg-card-row-piena {grid-template-columns: 1fr}
+.reg-card + .reg-p {margin-top: 16px}
+
 /* Mobile */
 body.ffm #reg-wrap {position: relative}
 body.ffm #reg-menu-btn {display: flex}
@@ -200,3 +206,4 @@ body.ffm .reg-grado-num {font-size: 11px}
 body.ffm .reg-sblocco {padding: 10px 12px}
 body.ffm .reg-gradi-larghi .reg-grado {grid-template-columns: 76px 1fr}
 body.ffm .reg-formula {padding: 6px 8px; font-size: 13px}
+body.ffm .reg-table-ombra td {padding: 4px 2px}

@@ -161,6 +161,18 @@
 #reg-wrap .reg-numeri > li > div {display: block; flex: 1; width: auto; min-width: 0; margin: 0; text-align: left}
 .reg-gradi-larghi .reg-grado {grid-template-columns: 92px 1fr}
 
+/* Combattimento */
+.reg-formula {margin: 8px 0 12px; padding: 8px 12px; font-size: 14px; font-weight: 600; line-height: 1.5; color: var(--reg-accent-text); background: var(--reg-bg); border: 1px dashed var(--reg-border); border-radius: 4px}
+.reg-sblocco .reg-formula {margin: 8px 0 0}
+.reg-costo-fase {font-weight: 600; color: var(--reg-accent-dark)}
+.reg-asterisco {font-size: 12px; font-style: italic; color: var(--reg-text-muted)}
+.reg-sblocco .reg-h3 {margin: 18px 0 0}
+.reg-sblocco .reg-note {margin: 10px 0 0; font-size: 14px}
+#reg-wrap .reg-list > li > .reg-p {margin: 6px 0}
+#reg-wrap .reg-list > li > .reg-h3 {margin: 12px 0 4px}
+#reg-wrap .reg-list > li > .reg-gradi {margin: 0 0 10px}
+.reg-table-stretta {max-width: 560px}
+
 /* Mobile */
 body.ffm #reg-wrap {position: relative}
 body.ffm #reg-menu-btn {display: flex}
@@ -187,3 +199,4 @@ body.ffm .reg-grado {grid-template-columns: 44px 1fr; gap: 8px}
 body.ffm .reg-grado-num {font-size: 11px}
 body.ffm .reg-sblocco {padding: 10px 12px}
 body.ffm .reg-gradi-larghi .reg-grado {grid-template-columns: 76px 1fr}
+body.ffm .reg-formula {padding: 6px 8px; font-size: 13px}

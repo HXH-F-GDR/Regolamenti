@@ -146,6 +146,20 @@
 #reg-wrap .reg-sblocco .reg-list {margin: 0; font-size: 14px}
 .reg-sblocco .reg-p {margin: 8px 0 0; font-size: 14px}
 
+/* Nen */
+.reg-tecnica-head {display: flex; align-items: center; gap: 14px; margin: 32px 0 12px}
+.reg-tecnica-head .reg-h2 {margin: 0; font-size: 15px}
+.reg-tecnica-head-h1 {margin: 0}
+.reg-icona {display: block; flex-shrink: 0; width: 54px; height: 54px; object-fit: contain; background: var(--reg-bg-sidebar); border: 1px solid var(--reg-border); border-radius: 50%}
+.reg-tecnica-cond {margin: 0 0 2px; font-size: 12px; font-style: italic; color: var(--reg-text-muted)}
+#reg-wrap .reg-list-spaziata > li {margin-bottom: 10px}
+#reg-wrap .reg-numeri {display: block; margin: 0 0 14px; padding: 0; list-style: none}
+#reg-wrap .reg-numeri > li {display: flex; gap: 8px; margin: 0 0 8px; line-height: var(--reg-line-height)}
+.reg-numeri-n {flex-shrink: 0; min-width: 22px; font-family: var(--reg-font-title); font-weight: 700; color: var(--reg-accent-dark)}
+#reg-wrap .reg-numeri-sub {margin: 8px 0 0; padding-left: 4px; font-size: 0.95em; border-left: 2px solid var(--reg-border)}
+#reg-wrap .reg-numeri-sub > li {padding-left: 8px}
+.reg-gradi-larghi .reg-grado {grid-template-columns: 92px 1fr}
+
 /* Mobile */
 body.ffm #reg-wrap {position: relative}
 body.ffm #reg-menu-btn {display: flex}
@@ -171,3 +185,5 @@ body.ffm .reg-costo {font-size: 9px}
 body.ffm .reg-grado {grid-template-columns: 44px 1fr; gap: 8px}
 body.ffm .reg-grado-num {font-size: 11px}
 body.ffm .reg-sblocco {padding: 10px 12px}
+body.ffm .reg-gradi-larghi .reg-grado {grid-template-columns: 76px 1fr}
+body.ffm .reg-icona {width: 42px; height: 42px}

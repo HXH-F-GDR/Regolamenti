@@ -1,0 +1,125 @@
+/* Root: palette, font e misure */
+#reg-wrap {--reg-font-body: 'Montserrat', sans-serif; --reg-font-title: 'Alegreya Sans SC', sans-serif; --reg-bg: #cce8e4; --reg-bg-sidebar: #bcddd8; --reg-sidebar-hover: #9acdc6; --reg-border: #8cc4bc; --reg-text: #1a2e2c; --reg-text-muted: #3a5854; --reg-accent: #1f8f84; --reg-accent-dark: #146058; --reg-accent-bg: #a8d4ce; --reg-accent-text: #0f4a44; --reg-sidebar-w: 220px; --reg-height: 800px; --reg-content-pad: 36px 44px 60px; --reg-radius: 6px; --reg-size-body: 16px; --reg-size-h1: 22px; --reg-size-h2: 13px; --reg-size-nav: 14px; --reg-size-label: 10px; --reg-line-height: 1.8}
+
+/* Layout generale */
+#reg-wrap {display: flex; height: var(--reg-height); font-family: var(--reg-font-body); font-size: var(--reg-size-body); line-height: var(--reg-line-height); color: var(--reg-text); background: var(--reg-bg); border: 1px solid var(--reg-border); border-radius: var(--reg-radius); overflow: hidden; text-align: left; box-sizing: border-box}
+#reg-wrap *, #reg-wrap *::before, #reg-wrap *::after {box-sizing: border-box}
+#reg-wrap a {color: var(--reg-accent-dark); text-decoration: underline; text-decoration-color: var(--reg-accent); text-underline-offset: 2px; transition: color 0.12s}
+#reg-wrap a:hover {color: var(--reg-accent)}
+
+/* Sidebar */
+#reg-sidebar {width: var(--reg-sidebar-w); min-width: var(--reg-sidebar-w); flex-shrink: 0; display: flex; flex-direction: column; background: var(--reg-bg-sidebar); border-right: 1px solid var(--reg-border); overflow: hidden; line-height: 1.3}
+#reg-sidebar-title {display: flex; align-items: center; gap: 8px; flex-shrink: 0; padding: 16px 16px 12px; font-family: var(--reg-font-title); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--reg-accent-dark); border-bottom: 1px solid var(--reg-border)}
+#reg-sidebar-title i {font-size: 30px; line-height: 1}
+#reg-nav {padding: 0; overflow: hidden}
+.reg-group {border-bottom: 1px solid var(--reg-border)}
+.reg-group:last-child {border-bottom: none}
+.reg-group-header {display: flex; align-items: center; justify-content: space-between; padding: 9px 16px; font-family: var(--reg-font-title); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--reg-text); cursor: pointer; user-select: none; transition: background 0.12s, color 0.12s}
+.reg-group-header::after {content: ''; flex-shrink: 0; width: 6px; height: 6px; margin: -3px 2px 0 10px; border-right: 2px solid currentcolor; border-bottom: 2px solid currentcolor; transform: rotate(45deg); transition: transform 0.2s ease}
+.reg-group-header:hover {background: var(--reg-sidebar-hover); color: var(--reg-accent-dark)}
+.reg-group.reg-open .reg-group-header {background: var(--reg-accent-bg); color: var(--reg-accent-dark)}
+.reg-group.reg-open .reg-group-header::after {transform: rotate(-135deg); margin-top: 3px}
+.reg-group-items {max-height: 0; overflow: hidden; transition: max-height 0.25s ease}
+.reg-group.reg-open .reg-group-items {max-height: 600px}
+#reg-wrap a.reg-nav-item {display: block; padding: 5px 14px 5px 26px; font-family: var(--reg-font-body); font-size: var(--reg-size-nav); color: var(--reg-text-muted); text-decoration: none; border-left: 2px solid transparent; transition: background 0.12s, color 0.12s, border-color 0.12s}
+#reg-wrap a.reg-nav-item:last-child {margin-bottom: 6px}
+#reg-wrap a.reg-nav-item:hover {background: var(--reg-sidebar-hover); color: var(--reg-text)}
+#reg-wrap a.reg-nav-item.reg-active {background: var(--reg-accent-bg); color: var(--reg-accent-dark); border-left-color: var(--reg-accent); font-weight: 500}
+
+/* Bottone menu e overlay (attivi solo su mobile) */
+#reg-menu-btn {display: none; align-items: center; justify-content: center; flex-shrink: 0; width: 32px; height: 32px; cursor: pointer; background: var(--reg-accent-bg); border-right: 1px solid var(--reg-border); border-bottom: 1px solid var(--reg-border)}
+#reg-menu-btn svg {width: 16px; height: 16px; fill: none; stroke: var(--reg-accent-dark); stroke-width: 2; stroke-linecap: round}
+#reg-overlay {display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 99}
+
+/* Contenuto */
+#reg-content {flex: 1; overflow-y: scroll; overflow-x: hidden; padding: var(--reg-content-pad); background: var(--reg-bg)}
+.reg-section {display: none}
+.reg-section.reg-visible {display: block}
+.reg-eyebrow {margin: 0 0 10px; font-family: var(--reg-font-title); font-size: var(--reg-size-label); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--reg-accent)}
+.reg-h1 {margin: 0 0 4px; font-family: var(--reg-font-title); font-size: var(--reg-size-h1); font-weight: 600; line-height: 1.3; color: var(--reg-text)}
+.reg-rule {width: 36px; height: 0; margin: 16px 0 24px; border: none; border-top: 1px solid var(--reg-accent); background: none}
+.reg-h2 {margin: 30px 0 10px; font-family: var(--reg-font-title); font-size: var(--reg-size-h2); font-weight: 600; letter-spacing: 0.04em; color: var(--reg-text)}
+.reg-p {margin: 0 0 14px; font-family: var(--reg-font-body); font-size: var(--reg-size-body); line-height: var(--reg-line-height); color: var(--reg-text)}
+.reg-list {margin: 0 0 14px; padding-left: 22px; list-style: disc outside}
+.reg-list li {margin: 0 0 6px; line-height: 1.7}
+.reg-list li p {margin: 6px 0 0}
+.reg-inline {padding: 1px 5px; font-family: monospace; font-size: 13px; font-style: normal; background: var(--reg-bg-sidebar); border: 1px solid var(--reg-border); border-radius: 3px; word-break: break-all}
+
+/* Note */
+.reg-note {margin: 20px 0; padding: 12px 16px; font-size: 15px; font-style: italic; line-height: 1.7; color: var(--reg-accent-text); background: var(--reg-accent-bg); border-left: 3px solid var(--reg-accent); border-radius: 0 4px 4px 0}
+.reg-note p {margin: 0 0 8px}
+.reg-note p:last-child {margin-bottom: 0}
+.reg-note .reg-list {margin: 0 0 8px}
+.reg-note-label {display: block; margin-bottom: 4px; font-family: var(--reg-font-title); font-size: 11px; font-style: normal; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--reg-accent-dark)}
+
+/* Lista dei luoghi di nascita */
+.reg-luogo-list {display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin: 14px 0 20px; padding: 0; list-style: none}
+.reg-luogo-list li {padding: 8px 12px; font-size: 14px; line-height: 1.5; color: var(--reg-text); background: var(--reg-bg-sidebar); border: 1px solid var(--reg-border); border-radius: 4px}
+.reg-luogo-list li strong {display: block; margin-bottom: 2px; font-family: var(--reg-font-title); font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--reg-accent-dark)}
+
+/* Schede di classi e statistiche */
+.reg-serie {display: flex; align-items: center; gap: 10px; margin: 26px 0 10px; font-family: var(--reg-font-title); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--reg-accent)}
+.reg-serie::after {content: ''; flex: 1; border-top: 1px solid var(--reg-border)}
+.reg-card {margin: 0 0 10px; padding: 12px 16px; background: var(--reg-bg-sidebar); border: 1px solid var(--reg-border); border-radius: 4px}
+.reg-card-head {display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 10px; margin-bottom: 6px}
+.reg-card-title {font-family: var(--reg-font-title); font-size: 15px; font-weight: 600; letter-spacing: 0.03em; color: var(--reg-accent-dark)}
+.reg-badge {padding: 2px 8px; font-family: var(--reg-font-title); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; color: var(--reg-accent-text); background: var(--reg-accent-bg); border-radius: 3px}
+.reg-card-extra {margin: 0 0 6px; font-size: 13px; font-style: italic; line-height: 1.5; color: var(--reg-text-muted)}
+.reg-card-row {display: grid; grid-template-columns: 150px 1fr; gap: 12px; padding: 6px 0; font-size: 14px; line-height: 1.6; border-top: 1px dashed var(--reg-border)}
+.reg-card-label {padding-top: 2px; font-family: var(--reg-font-title); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--reg-text-muted)}
+.reg-card-row p {margin: 0 0 6px}
+.reg-card-row p:last-child {margin-bottom: 0}
+
+/* Tabella degli allineamenti */
+.reg-align-table {width: 100%; margin: 20px 0; border-collapse: separate; border-spacing: 6px}
+.reg-align-table th {padding: 8px 12px; font-family: var(--reg-font-title); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; color: var(--reg-accent-dark); background: var(--reg-accent-bg); border: 1px solid var(--reg-border); border-radius: 4px}
+.reg-align-table th.reg-align-corner {background: transparent; border: none}
+.reg-align-header {width: 36px; padding: 8px 4px; font-family: var(--reg-font-title); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; color: var(--reg-accent-dark); background: var(--reg-accent-bg); border: 1px solid var(--reg-border); border-radius: 4px}
+.reg-align-cell {padding: 12px; text-align: center; vertical-align: top; background: var(--reg-bg-sidebar); border: 1px solid var(--reg-border); border-radius: 4px}
+.reg-align-code {display: block; margin-bottom: 8px; font-family: var(--reg-font-title); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: var(--reg-accent-dark)}
+.reg-align-img {display: block; width: 80px; height: 80px; margin: 0 auto 10px; object-fit: cover; border: 2px solid var(--reg-border); border-radius: 50%}
+.reg-align-desc {font-family: var(--reg-font-body); font-size: 13px; line-height: 1.6; color: var(--reg-text-muted)}
+
+/* Bottone sezione successiva */
+#reg-wrap a.reg-next {display: flex; align-items: center; gap: 10px; width: fit-content; margin-top: 44px; padding-top: 22px; text-decoration: none; border-top: 1px solid var(--reg-border)}
+.reg-next-label {display: block; margin-bottom: 2px; font-family: var(--reg-font-title); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--reg-text-muted); transition: color 0.12s}
+.reg-next-title {display: block; font-family: var(--reg-font-title); font-size: 14px; font-weight: 600; color: var(--reg-accent-dark)}
+.reg-next-arrow {display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 28px; height: 28px; border: 1px solid var(--reg-accent); border-radius: 50%; transition: background 0.12s}
+.reg-next-arrow::after {content: ''; width: 7px; height: 7px; margin-left: -3px; border-top: 2px solid var(--reg-accent); border-right: 2px solid var(--reg-accent); transform: rotate(45deg)}
+#reg-wrap a.reg-next:hover .reg-next-label {color: var(--reg-accent-dark)}
+#reg-wrap a.reg-next:hover .reg-next-arrow {background: var(--reg-accent-bg)}
+
+/* Code */
+.reg-code-wrap {position: relative; margin: 14px 0}
+.reg-code {padding: 10px 40px 10px 14px; font-family: monospace; font-size: 13px; white-space: pre-wrap; word-break: break-all; color: var(--reg-text); background: var(--reg-bg-sidebar); border: 1px solid var(--reg-border); border-left: 3px solid var(--reg-accent); border-radius: 0 4px 4px 0}
+.reg-code-copy {position: absolute; top: 6px; right: 6px; padding: 3px 7px; font-family: var(--reg-font-title); font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--reg-accent-dark); background: var(--reg-bg); border: 1px solid var(--reg-border); border-radius: 3px; cursor: pointer}
+.reg-code-copy:hover {background: var(--reg-sidebar-hover)}
+
+/* Spoiler */
+.reg-spoiler {margin: 14px 0}
+.reg-spoiler-toggle {display: inline-block; width: 100%; padding: 6px 12px; font-family: var(--reg-font-title); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--reg-accent-dark); background: var(--reg-bg-sidebar); border: 1px solid var(--reg-border); border-radius: 4px; cursor: pointer; user-select: none}
+.reg-spoiler-toggle:hover {background: var(--reg-sidebar-hover)}
+.reg-spoiler-body {display: none; margin-top: 8px; padding: 6px 16px; font-size: var(--reg-size-body); line-height: var(--reg-line-height); color: var(--reg-text); background: var(--reg-bg-sidebar); border: 1px solid var(--reg-border); border-radius: 4px}
+.reg-spoiler-body.reg-open {display: block}
+
+/* Quote */
+.reg-quote {margin: 14px 0; padding: 12px 16px; font-size: var(--reg-size-body); font-style: italic; line-height: var(--reg-line-height); color: var(--reg-text); background: var(--reg-bg-sidebar); border-left: 3px solid var(--reg-accent); border-radius: 0 4px 4px 0}
+.reg-quote-author {display: block; margin-bottom: 6px; font-family: var(--reg-font-title); font-size: 10px; font-style: normal; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--reg-accent-dark)}
+
+/* Mobile */
+body.ffm #reg-wrap {position: relative}
+body.ffm #reg-menu-btn {display: flex}
+body.ffm #reg-sidebar {position: absolute; top: 0; left: -100%; height: 100%; width: 220px; min-width: 220px; z-index: 100; transition: left 0.25s ease}
+body.ffm #reg-sidebar.reg-sidebar-open {left: 0}
+body.ffm #reg-overlay {display: block; opacity: 0; pointer-events: none; transition: opacity 0.25s ease}
+body.ffm #reg-overlay.reg-sidebar-open {opacity: 1; pointer-events: auto}
+body.ffm #reg-content {padding: 20px 16px 40px}
+body.ffm .reg-card-row {grid-template-columns: 1fr; gap: 2px}
+body.ffm .reg-align-table {table-layout: fixed; width: 100%; font-size: 10px}
+body.ffm .reg-align-table th {padding: 6px 4px}
+body.ffm .reg-align-table th:first-child {width: 14px}
+body.ffm .reg-align-header {padding: 6px 2px}
+body.ffm .reg-align-cell {padding: 2px}
+body.ffm .reg-align-img {width: 50px; height: 50px}
+body.ffm .reg-align-code {font-size: 10px}
+body.ffm .reg-align-desc {font-size: 10px; word-break: break-word; hyphens: auto}

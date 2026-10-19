@@ -158,5 +158,5 @@ body.ffm .reg-table td {padding: 4px 3px; font-size: 10px; line-height: 1.4; ove
 body.ffm .reg-stelle {font-size: 8px; letter-spacing: 0}
 body.ffm .reg-grado {grid-template-columns: 44px 1fr; gap: 8px}
 body.ffm .reg-grado-num {font-size: 11px}
-#reg-wrap .reg-card-row > div, #reg-wrap .reg-grado-testo, #reg-wrap .reg-faq, #reg-wrap .reg-table td, #reg-wrap .reg-table th {text-align: left}
-#reg-wrap .reg-list {display: block; text-align: left}
+#reg-wrap .reg-card-row > div, #reg-wrap .reg-grado-testo {display: block; width: 100%; min-width: 0; margin: 0; justify-self: stretch}
+#reg-wrap .reg-list {display: block; width: auto; margin-left: 0; margin-right: 0}

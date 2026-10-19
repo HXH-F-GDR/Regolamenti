@@ -153,10 +153,14 @@ if (!sezioni[sez]) { sez = primaSezione; sub = ''; }
 if (!sez || !sezioni[sez]) { return; }
 var clone = sezioni[sez].cloneNode(true);
 clone.classList.add('reg-visible');
+content.scrollTop = 0;
 while (content.firstChild) { content.removeChild(content.firstChild); }
 content.appendChild(clone);
 attivaSpoiler(clone);
 attivaCodice(clone);
+content.style.display = 'none';
+var ridisegna = content.offsetHeight;
+content.style.display = '';
 content.scrollTop = 0;
 if (sub) {
 var bersaglio = clone.querySelector('[data-anchor="' + creaSlug(sub) + '"]');

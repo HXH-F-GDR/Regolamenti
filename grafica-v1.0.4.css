@@ -1,0 +1,27 @@
+/* Crescita del Personaggio */
+.reg-h3 {margin: 22px 0 8px; font-family: var(--reg-font-title); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--reg-accent-dark)}
+.reg-card > .reg-list {margin: 0}
+.reg-card-row .reg-list {margin: 0}
+.reg-card-row .reg-list li {margin-bottom: 2px}
+.reg-table {width: 100%; margin: 14px 0 20px; border-collapse: separate; border-spacing: 4px; table-layout: fixed}
+.reg-table th {padding: 6px 8px; font-family: var(--reg-font-title); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-align: left; text-transform: uppercase; vertical-align: bottom; color: var(--reg-accent-dark); background: var(--reg-accent-bg); border: 1px solid var(--reg-border); border-radius: 4px}
+.reg-table td {padding: 6px 8px; font-size: 13px; line-height: 1.5; vertical-align: top; color: var(--reg-text); background: var(--reg-bg-sidebar); border: 1px solid var(--reg-border); border-radius: 4px}
+.reg-table td.reg-table-key {font-family: var(--reg-font-title); font-weight: 600; color: var(--reg-accent-dark)}
+.reg-stelle {display: block; font-size: 11px; letter-spacing: 1px; color: var(--reg-accent)}
+.reg-gradi {margin: 6px 0 20px}
+.reg-grado {display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: start; padding: 10px 0; border-top: 1px dashed var(--reg-border)}
+.reg-grado:first-child {border-top: none}
+.reg-grado-num {display: flex; align-items: center; justify-content: center; height: 28px; font-family: var(--reg-font-title); font-size: 13px; font-weight: 700; white-space: nowrap; color: var(--reg-bg); background: var(--reg-accent-dark); border-radius: 14px}
+.reg-grado-testo {font-size: 14px; line-height: 1.6}
+.reg-grado-testo p {margin: 0 0 4px}
+.reg-grado-testo p:last-child {margin-bottom: 0}
+.reg-faq {margin: 0 0 10px; padding: 10px 14px; font-size: 14px; line-height: 1.6; background: var(--reg-bg-sidebar); border: 1px solid var(--reg-border); border-radius: 4px}
+.reg-faq p {margin: 0 0 6px}
+.reg-faq p:last-child {margin-bottom: 0}
+.reg-faq-d {font-weight: 600; color: var(--reg-accent-dark)}
+body.ffm .reg-table {border-spacing: 2px}
+body.ffm .reg-table th {padding: 4px 3px; font-size: 9px; letter-spacing: 0; overflow-wrap: break-word; hyphens: auto}
+body.ffm .reg-table td {padding: 4px 3px; font-size: 10px; line-height: 1.4; overflow-wrap: break-word; hyphens: auto}
+body.ffm .reg-stelle {font-size: 8px; letter-spacing: 0}
+body.ffm .reg-grado {grid-template-columns: 44px 1fr; gap: 8px}
+body.ffm .reg-grado-num {font-size: 11px}

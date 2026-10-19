@@ -179,6 +179,11 @@
 #reg-wrap .reg-card-row.reg-card-row-piena {grid-template-columns: 1fr}
 .reg-card + .reg-p {margin-top: 16px}
 
+/* Torre Celeste */
+.reg-sblocco-sub {font-family: var(--reg-font-body); font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--reg-text)}
+.reg-sbloccabile {font-size: 12px; font-style: italic; color: var(--reg-text-muted)}
+.reg-sblocco .reg-formula + .reg-formula {margin-top: 6px}
+
 /* Mobile */
 body.ffm #reg-wrap {position: relative}
 body.ffm #reg-menu-btn {display: flex}
@@ -206,4 +211,3 @@ body.ffm .reg-grado-num {font-size: 11px}
 body.ffm .reg-sblocco {padding: 10px 12px}
 body.ffm .reg-gradi-larghi .reg-grado {grid-template-columns: 76px 1fr}
 body.ffm .reg-formula {padding: 6px 8px; font-size: 13px}
-body.ffm .reg-table-ombra td {padding: 4px 2px}
